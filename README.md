@@ -1,2 +1,3 @@
-# nixopus-docker-extensions
-voila! nixopus extension composes!!
+<h2 align="center">
+  Nixopus Docker Extensions
+</h2>
