@@ -76,7 +76,7 @@ services:
       - postiz-config:/config/
       - postiz-uploads:/uploads/
     ports:
-      - "${HOST_PORT:-5000}:5000"
+      - "${HOST_PORT:-5001}:5000"
     networks:
       - postiz-network
     depends_on:
@@ -95,6 +95,8 @@ services:
       POSTGRES_DB: "${POSTGRES_DB}"
     volumes:
       - postgres-volume:/var/lib/postgresql/data
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
     networks:
       - postiz-network
     healthcheck:
@@ -114,6 +116,8 @@ services:
       retries: 3
     volumes:
       - postiz-redis-data:/data
+    ports:
+      - "${REDIS_PORT:-6380}:6379"
     networks:
       - postiz-network
 
